@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_weather
+    description: "Données météo nettoyées, une ligne par ville et par extraction"
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: ville
+        tests:
+          - not_null
+      - name: temperature
+        tests:
+          - not_null
+      - name: humidite
+        tests:
+          - not_null

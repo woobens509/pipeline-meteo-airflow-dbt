@@ -1,0 +1,12 @@
+projet1_meteo:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('METEO_DB_HOST', 'localhost') }}"
+      port: "{{ env_var('METEO_DB_PORT', '5433') | as_number }}"
+      user: "{{ env_var('METEO_DB_USER', 'dbt_user') }}"
+      password: "{{ env_var('METEO_DB_PASSWORD', 'dbt_password') }}"
+      dbname: "{{ env_var('METEO_DB_NAME', 'meteo_db') }}"
+      schema: public
+      threads: 4
